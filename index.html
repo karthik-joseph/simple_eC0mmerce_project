@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <title>EarthKind Botanics | Discover Natural Ingredients</title>
+        <meta name="description" content="Discover botanical ingredients, plant oils, herbal powders, and natural extracts at EarthKind Botanics. Explore nature-inspired ingredients with clear product information and thoughtful choices." />
+        <meta name="keywords" content="EarthKind Botanics, natural ingredients, botanical extracts, plant oils, herbal powders" />
+        <meta name="author" content="EarthKind Botanics" />
+        <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#F7F6EF" />
+        <meta name="color-scheme" content="light dark">
+        <link rel="icon" type="image/svg+xml" href="assets/images/logo.jpeg" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="EarthKind Botanics" />
+        <meta property="og:title" content="EarthKind Botanics | Discover Natural Ingredients" />
+        <meta property="og:description" content="Discover botanical ingredients, plant oils, herbal powders, and natural extracts at EarthKind Botanics. Explore nature-inspired ingredients with clear product information and thoughtful choices.">
+        <meta property="og:image" content="assets/images/earthkind_logo.png" />
+        <meta property="og:locale" content="en_IN">
+
+        <link rel="stylesheet" href="css/fonts.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <script src="js/script.js" defer></script>
+        <script src="js/featured-products.js" defer></script>
+        <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"Store","name":"EarthKind Botanics","description":"Discover botanical ingredients, plant oils, herbal powders, and natural extracts.","image":"images/og-cover.jpg","areaServed":["Kochi","Kochi","Kerala"]}
+        </script>
+    </head>
+    <body>
+        <!--  Announcement bar -->
+        <div
+            class="announcement-bar"
+            id="announcement-bar"
+            role="region"
+            aria-label="Store announcement"
+            hidden
+        >
+        <p id="announcement-message"></p>
+
+        <a id="announcement-link" href="#" hidden>
+            Discover more
+            <span aria-hidden="true">↗</span>
+        </a>
+
+        <button
+            type="button"
+            class="announcement-close"
+            id="announcement-close"
+            aria-label="Dismiss announcement"
+        >
+            &times;
+        </button>
+        </div>
+
+        <!-- HEADER -->
+        <header class="floating-header">
+            <a href="/" class="brand-logo" aria-label="EarthKind Botanics home">
+                <span class="brand-icon" aria-hidden="true">
+                    <img src="assets/images/logo.jpeg" alt="EarthKind Botanics logo" />
+                </span>
+                <span class="brand-name">EarthKind Botanics</span>
+            </a>
+
+            <nav class="main-navigation" id="main-navigation"
+                aria-label="Main navigation">
+                <a href="#home" aria-current="page">Home</a>
+                <a href="templates/shop.html">Shop</a>
+                <a href="#our-story">Our Story</a>
+                <a href="#journal">Journal</a>
+            </nav>
+
+            <div class="header-actions">
+                <button
+                    type="button"
+                    class="icon-button theme-toggle"
+                    id="theme-toggle"
+                    aria-label="Switch to dark theme"
+                    title="Switch theme"
+                >
+                    <svg
+                        class="theme-icon sun-icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2"/>
+                        <path d="M12 20v2"/>
+                        <path d="m4.93 4.93 1.42 1.42"/>
+                        <path d="m17.65 17.65 1.42 1.42"/>
+                        <path d="M2 12h2"/>
+                        <path d="M20 12h2"/>
+                        <path d="m6.35 17.65-1.42 1.42"/>
+                        <path d="m19.07 4.93-1.42 1.42"/>
+                    </svg>
+
+                    <svg
+                        class="theme-icon moon-icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+                        <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6.9 6.9 0 0 0 8.268 8.268c.344-.215.825-.003.803.401"/>
+                    </svg>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="cart-toggle"
+                    id="cart-toggle"
+                >
+                    <span>Cart</span>
+                    <span id="cart-count" hidden>0</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="menu-toggle"
+                    id="menu-toggle"
+                    aria-label="Open navigation menu"
+                    aria-controls="main-navigation"
+                    aria-expanded="false"
+                >
+                    <!-- Botanical sprout icon -->
+                    <svg
+                        class="menu-icon sprout-icon"
+                        viewBox="0 0 24 24"
+                        width="22"
+                        height="22"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+                        <path d="M12 21v-9"/>
+                        <path d="M12 15C5 15 3 10 3 5c5 0 10 2 10 9"/>
+                        <path d="M12 11c0-5 4-8 9-8 0 5-2 9-9 10"/>
+                    </svg>
+
+                    <!-- Close icon -->
+                    <svg
+                        class="menu-icon close-icon"
+                        viewBox="0 0 24 24"
+                        width="22"
+                        height="22"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                        stroke-linecap="round"
+                        aria-hidden="true"
+                    >
+                        <path d="m18 6-12 12"/>
+                        <path d="m6 6 12 12"/>
+                    </svg>
+                </button>
+
+            </div>
+        </header>
+
+        <!-- MAIN -->
+        <main>
+            <!-- Hero -->
+            <section class="hero" id="home">
+                <div class="hero-content">
+                    <p class="eyebrow hero-eyebrow">
+                    <span class="eyebrow-line"></span>
+                    ROOTED IN NATURE
+                    </p>
+
+                    <h1 class="hero-title">
+                    Nature's finest ingredients,
+                        <span>thoughtfully discovered.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                    Explore botanical powders, plant oils, herbs, and natural
+                    extracts for your next creation. Discover the beauty of
+                    nature, one ingredient at a time.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="/shop.html" class="button button-primary hero-cta">
+                            <span>Explore ingredients</span>
+                            <svg
+                            viewBox="0 0 24 24"
+                            width="18"
+                            height="18"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                            >
+                                <path d="M5 12h14"/>
+                                <path d="m12 5 7 7-7 7"/>
+                            </svg>
+                        </a>
+
+                        <a href="#our-story" class="hero-secondary-link">
+                            Discover our story
+                        </a>
+                    </div>
+
+                    <div class="hero-note">
+                        <span class="hero-note-icon" aria-hidden="true">✳</span>
+                        <p>Inspired by nature. Chosen with intention.</p>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-image-frame">
+                        <img
+                            src="assets/images/hero.png"
+                            alt="Lush green botanical plants arranged in a natural stone planter against a soft blue mountain landscape"
+                            class="hero-image"
+                            fetchpriority="high"
+                            decoding="async"
+                        />
+                    </div>
+
+                    <div class="hero-image-caption">
+                        <span class="caption-dot"></span>
+                        A little closer to nature
+                    </div>
+
+                    <span class="hero-decoration hero-decoration-one"
+                        aria-hidden="true">✳</span>
+                    <span class="hero-decoration hero-decoration-two"
+                        aria-hidden="true">✧</span>
+                </div>
+            </section>
+
+            <!-- Categories -->
+            <section class="categories section" id="categories">
+                <header class="section-header category-section-header">
+                    <p class="eyebrow">
+                    <span class="eyebrow-line"></span>
+                    EXPLORE THE BOTANICAL WORLD
+                    </p>
+
+                    <h2>Shop by category</h2>
+
+                    <p>
+                    Find the ingredients that inspire your creations.
+                    </p>
+                </header>
+
+                <div
+                    class="category-grid"
+                    id="category-grid"
+                    aria-label="Product categories"
+                >
+                    <!-- Category cards are rendered using JavaScript -->
+                </div>
+
+                <div class="category-footer">
+                    <a href="templates/shop.html" class="category-view-all">
+                    Explore all ingredients
+                    <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Featured products -->
+            <section class="featured-products section" id="featured">
+                <header class="section-header">
+                    <p class="eyebrow">SELECTED FOR YOU</p>
+                    <h2>Featured ingredients</h2>
+                    <p>Explore a selection from our botanical collection.</p>
+                </header>
+
+                <div class="product-grid" id="featured-product-grid">
+                    <!-- Products rendered using JavaScript -->
+                </div>
+
+                <a href="templates/shop.html" class="button button-secondary">
+                    Explore all ingredients
+                </a>
+            </section>
+
+            <!-- Brand philosophy -->
+            <section class="brand-story section" id="our-story">
+
+                <div class="story-container">
+
+                    <!-- Botanical lifestyle image -->
+                    <div class="story-image">
+                        <img
+                            src="assets/images/lifestyle/earthkind-lifestyle.png"
+                            alt="Natural botanical ingredients, fresh herbs, plant oils and herbal powders"
+                            loading="lazy"
+                        >
+
+                        <div class="story-image-caption">
+                            <span>ROOTED IN NATURE</span>
+                        </div>
+                    </div>
+
+                    <!-- Brand story content -->
+                    <div class="story-content">
+
+                        <p class="eyebrow">OUR PHILOSOPHY</p>
+
+                        <h2>
+                            Every ingredient
+                            <span>has a story.</span>
+                        </h2>
+
+                        <p class="story-description">
+                            We believe exploring natural ingredients should
+                            feel simple, transparent, and inspiring.
+                        </p>
+
+                        <p class="story-description">
+                            From carefully selected botanicals to nature-inspired
+                            essentials, we bring ingredients closer to the people
+                            who value their origin, quality, and possibilities.
+                        </p>
+
+                        <a href="templates/about.html" class="story-link">
+                            Discover our story
+                            <span aria-hidden="true">↗</span>
+                        </a>
+
+                        <div class="story-decoration">
+                            <span>Nature</span>
+                            <span class="decoration-dot"></span>
+                            <span>Transparency</span>
+                            <span class="decoration-dot"></span>
+                            <span>Purpose</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            
+            <!-- QUALITY AND SOURCING-->
+            <section class="quality section" id="quality">
+                <div class="quality-container">
+                    <header class="section-header">
+                        <p class="eyebrow">OUR COMMITMENT</p>
+                        <h2>
+                            Know what goes into
+                            <span>your creations.</span>
+                        </h2>
+                        <p>
+                            Explore clear ingredient information,
+                            product specifications, and sourcing details.
+                        </p>
+                    </header>
+
+                    <div class="quality-grid">
+
+                        <!-- Transparency -->
+                        <article class="quality-item">
+                            <div class="quality-icon" aria-hidden="true">
+                                <svg viewBox="0 0 48 48" fill="none">
+                                    <path
+                                        d="M24 5L39 11V22C39 32 32.5 39 24 43C15.5 39 9 32 9 22V11L24 5Z"
+                                        stroke="currentColor"
+                                        stroke-width="1.5"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path
+                                        d="M17 24L22 29L32 18"
+                                        stroke="currentColor"
+                                        stroke-width="1.8"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                            </div>
+
+                            <span class="quality-number">01 / TRANSPARENCY</span>
+                            <h3>Ingredient transparency</h3>
+                            <p>
+                                Clear names, specifications, and product details
+                                help you understand the ingredients you explore.
+                            </p>
+                            <span class="quality-card-decoration" aria-hidden="true">
+                                01
+                            </span>
+                        </article>
+
+
+                        <!-- Selection -->
+                        <article class="quality-item">
+                            <div class="quality-icon" aria-hidden="true">
+                                <svg viewBox="0 0 48 48" fill="none">
+                                    <path
+                                        d="M24 40C24 40 9 31 9 19C9 11 15 7 21 11C23 12.5 24 15 24 15C24 15 25 12.5 27 11C33 7 39 11 39 19C39 31 24 40 24 40Z"
+                                        stroke="currentColor"
+                                        stroke-width="1.5"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path
+                                        d="M24 35C24 26 28 20 34 16"
+                                        stroke="currentColor"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                    />
+                                    <path
+                                        d="M24 27C20 23 17 22 14 22"
+                                        stroke="currentColor"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                    />
+                                </svg>
+                            </div>
+
+                            <span class="quality-number">02 / SELECTION</span>
+                            <h3>Thoughtful selection</h3>
+                            <p>
+                                Discover ingredients across different categories
+                                for a variety of creative and formulation needs.
+                            </p>
+                            <span class="quality-card-decoration" aria-hidden="true">
+                                02
+                            </span>
+                        </article>
+
+                        <!-- Informed choices -->
+                        <article class="quality-item">
+                            <div class="quality-icon" aria-hidden="true">
+                                <svg viewBox="0 0 48 48" fill="none">
+                                    <circle
+                                        cx="24"
+                                        cy="24"
+                                        r="18"
+                                        stroke="currentColor"
+                                        stroke-width="1.5"
+                                    />
+                                    <path
+                                        d="M24 21V32"
+                                        stroke="currentColor"
+                                        stroke-width="1.8"
+                                        stroke-linecap="round"
+                                    />
+                                    <circle
+                                        cx="24"
+                                        cy="15"
+                                        r="1.5"
+                                        fill="currentColor"
+                                    />
+                                </svg>
+                            </div>
+
+                            <span class="quality-number">03 / CLARITY</span>
+                            <h3>Informed choices</h3>
+                            <p>
+                                Understand the available product information
+                                and details before making your purchase.
+                            </p>
+                            <span class="quality-card-decoration" aria-hidden="true">
+                                03
+                            </span>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BOTANICAL JOURNAL -->
+            <section class="journal section" id="journal">
+                <div class="journal-container">
+                    <header class="section-header">
+                        <p class="eyebrow">LEARN & DISCOVER</p>
+                        <h2>The botanical journal</h2>
+                        <p>
+                            Explore helpful insights and discover more about
+                            the ingredients inspired by nature.
+                        </p>
+                    </header>
+
+                    <div class="journal-grid" id="journal-grid">
+                        <!-- Article cards rendered using JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Article Popup -->
+            <div class="article-modal" id="article-modal" aria-hidden="true">
+                <div class="article-modal-overlay" data-close-article></div>
+                <article
+                    class="article-modal-content"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="article-modal-title"
+                >
+                    <button
+                        class="article-modal-close"
+                        type="button"
+                        aria-label="Close article"
+                        data-close-article
+                    >
+                        &times;
+                    </button>
+
+                    <div class="article-modal-image">
+                        <img id="article-modal-image" src="" alt="">
+                    </div>
+                    <div class="article-modal-body">
+                        <p class="eyebrow" id="article-modal-category"></p>
+                        <h2 id="article-modal-title"></h2>
+                        <p class="article-modal-meta" id="article-modal-meta"></p>
+                        <div class="article-modal-text" id="article-modal-text">
+                            <!-- Full article content -->
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+           <!-- Newsletter -->
+            <section class="newsletter section" id="newsletter">
+                <div class="newsletter-container">
+                    <div class="newsletter-content">
+                        <p class="eyebrow">A NOTE FROM NATURE</p>
+                        <h2>A little nature in your inbox.</h2>
+                        <p class="newsletter-description">
+                            Receive botanical guides, ingredient discoveries,
+                            and thoughtful updates from our store.
+                        </p>
+                        <form id="newsletter-form" class="newsletter-form">
+                            <div class="newsletter-input-group">
+                                <label for="newsletter-email">Email address</label>
+                                <input
+                                    type="email"
+                                    id="newsletter-email"
+                                    name="email"
+                                    placeholder="you@example.com"
+                                    autocomplete="email"
+                                    required
+                                >
+                            </div>
+                            <button type="submit" class="newsletter-button">
+                                Subscribe
+                                <span aria-hidden="true">→</span>
+                            </button>
+                        </form>
+                        <p class="newsletter-message" id="newsletter-message"
+                        role="status" aria-live="polite"></p>
+                        <p class="newsletter-note">
+                            We respect your inbox. Unsubscribe whenever you like.
+                        </p>
+                    </div>
+                    <div class="newsletter-decoration" aria-hidden="true">
+                        <img
+                            src="assets/images/newsletter/newsletter-botanical.png"
+                            alt=""
+                            loading="lazy"
+                        >
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+            <div class="footer-container">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand-logo">
+                        <img src="assets/images/logo.jpeg" alt="EarthKind Botanics logo" class="footer-logo" />
+                        <span>EarthKind <br/>BOTANICS</span>
+                    </a>
+
+                    <p>
+                        Discover the possibilities of nature,
+                        one ingredient at a time.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>Explore</h3>
+
+                    <a href="/">Home</a>
+                    <a href="/templates/shop.html">Shop ingredients</a>
+                    <a href="/index.html#featured">Featured products</a>
+                    <a href="/templates/about.html">Our story</a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>Discover</h3>
+
+                    <a href="/templates/shop.html?category=plant-oils">Plant oils</a>
+                    <a href="/templates/shop.html?category=botanical-powders">Botanical powders</a>
+                    <a href="/templates/shop.html?category=dried-botanicals">Dried botanicals</a>
+                    <a href="/templates/shop.html?category=natural-extracts">Natural extracts</a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>Get in touch</h3>
+
+                    <p>
+                        Have a question about our collection?
+                    </p>
+
+                    <a href="mailto:karthikkarthikpwork@gmail.com">
+                        Contact us
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    &copy; <span id="current-year"></span>
+                    EarthKind Botanics. All rights reserved.
+                </p>
+
+                <p>
+                    Made with appreciation for nature.
+                </p>
+
+            </div>
+
+        </footer>
+
+        <!-- CART OVERLAY-->
+        <div class="cart-overlay" id="cart-overlay"></div>
+
+        <!-- SHIPPING CART LAYER -->
+        <aside class="cart-drawer"
+            id="cart-drawer"
+            aria-label="Shopping cart"
+            aria-hidden="true">
+
+            <div class="cart-header">
+                <div>
+                    <p class="eyebrow">YOUR SELECTION</p>
+                    <h2>Your Cart <span id="drawer-cart-count">(0)</span></h2>
+                </div>
+
+                <button type="button"
+                        class="cart-close"
+                        id="cart-close"
+                        aria-label="Close shopping cart">
+                    &times;
+                </button>
+            </div>
+
+            <div class="cart-items" id="cart-items">
+                <!-- Cart items rendered with JavaScript -->
+            </div>
+
+            <div class="cart-empty" id="cart-empty">
+                <span>✳</span>
+                <h3>Your basket is waiting</h3>
+                <p>Discover something natural for your next creation.</p>
+                <button type="button" id="continue-shopping">
+                    Explore ingredients
+                </button>
+            </div>
+
+            <div class="cart-footer" id="cart-footer">
+                <div class="cart-subtotal">
+                    <span>Subtotal</span>
+                    <strong id="cart-subtotal">₹0</strong>
+                </div>
+
+                <p>Shipping and taxes calculated at checkout.</p>
+
+                <button type="button"
+                        class="button button-primary cart-checkout">
+                    Proceed to checkout
+                    <span>↗</span>
+                </button>
+
+                <button type="button"
+                        class="cart-continue"
+                        id="cart-continue">
+                    Continue shopping
+                </button>
+            </div>
+
+        </aside>
+    </body>
+</html>

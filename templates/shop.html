@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <title>EarthKind Botanics | Shop</title>
+        <meta name="description" content="Discover botanical ingredients, plant oils, herbal powders, and natural extracts at EarthKind Botanics. Explore nature-inspired ingredients with clear product information and thoughtful choices." />
+        <meta name="keywords" content="EarthKind Botanics, natural ingredients, botanical extracts, plant oils, herbal powders" />
+        <meta name="author" content="EarthKind Botanics" />
+        <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#F7F6EF" />
+        <meta name="color-scheme" content="light dark">
+        <link rel="icon" type="image/svg+xml" href="../assets/images/logo.jpeg" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="EarthKind Botanics" />
+        <meta property="og:title" content="EarthKind Botanics | Discover Natural Ingredients" />
+        <meta property="og:description" content="Discover botanical ingredients, plant oils, herbal powders, and natural extracts at EarthKind Botanics. Explore nature-inspired ingredients with clear product information and thoughtful choices.">
+        <meta property="og:image" content="../assets/images/earthkind_logo.png" />
+        <meta property="og:locale" content="en_IN">
+
+        <link rel="stylesheet" href="../css/fonts.css" />
+        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" href="../css/shop.css" />
+        <script src="../js/script.js" defer></script>
+        <script src="../js/shop.js" defer></script>
+        <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"Store","name":"EarthKind Botanics","description":"Discover botanical ingredients, plant oils, herbal powders, and natural extracts.","image":"images/og-cover.jpg","areaServed":["Munnar","Marayoor","Kerala"]}
+        </script>
+    </head>
+    <body>
+        <!--  Announcement bar -->
+        <div
+            class="announcement-bar"
+            id="announcement-bar"
+            role="region"
+            aria-label="Store announcement"
+            hidden
+        >
+            <p id="announcement-message"></p>
+
+            <a id="announcement-link" href="#" hidden>
+                Discover more
+                <span aria-hidden="true">↗</span>
+            </a>
+
+            <button
+                type="button"
+                class="announcement-close"
+                id="announcement-close"
+                aria-label="Dismiss announcement"
+            >
+                &times;
+            </button>
+        </div>
+        
+        <!-- Header -->
+        <header class="floating-header">
+            <a href="/" class="brand-logo" aria-label="EarthKind Botanics home">
+                <span class="brand-icon" aria-hidden="true">
+                    <img src="../assets/images/logo.jpeg" alt="EarthKind Botanics logo" />
+                </span>
+                <span class="brand-name">EarthKind Botanics</span>
+            </a>
+
+            <nav class="main-navigation" id="main-navigation"
+                aria-label="Main navigation">
+                <a href="shop.html">Shop</a>
+            </nav>
+
+            <div class="header-actions">
+                <button
+                    type="button"
+                    class="icon-button theme-toggle"
+                    id="theme-toggle"
+                    aria-label="Switch to dark theme"
+                    title="Switch theme"
+                >
+                    <svg
+                        class="theme-icon sun-icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2"/>
+                        <path d="M12 20v2"/>
+                        <path d="m4.93 4.93 1.42 1.42"/>
+                        <path d="m17.65 17.65 1.42 1.42"/>
+                        <path d="M2 12h2"/>
+                        <path d="M20 12h2"/>
+                        <path d="m6.35 17.65-1.42 1.42"/>
+                        <path d="m19.07 4.93-1.42 1.42"/>
+                    </svg>
+
+                    <svg
+                        class="theme-icon moon-icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+                        <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6.9 6.9 0 0 0 8.268 8.268c.344-.215.825-.003.803.401"/>
+                    </svg>
+                </button>
+
+
+               <button
+                    type="button"
+                    class="cart-toggle"
+                    id="cart-toggle"
+                >
+                    <span>Cart</span>
+                    <span id="cart-count" hidden>0</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="menu-toggle"
+                    id="menu-toggle"
+                    aria-label="Open navigation menu"
+                    aria-controls="main-navigation"
+                    aria-expanded="false"
+                >
+                    <!-- Botanical sprout icon -->
+                    <svg
+                        class="menu-icon sprout-icon"
+                        viewBox="0 0 24 24"
+                        width="22"
+                        height="22"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                    >
+                        <path d="M12 21v-9"/>
+                        <path d="M12 15C5 15 3 10 3 5c5 0 10 2 10 9"/>
+                        <path d="M12 11c0-5 4-8 9-8 0 5-2 9-9 10"/>
+                    </svg>
+
+                    <!-- Close icon -->
+                    <svg
+                        class="menu-icon close-icon"
+                        viewBox="0 0 24 24"
+                        width="22"
+                        height="22"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                        stroke-linecap="round"
+                        aria-hidden="true"
+                    >
+                        <path d="m18 6-12 12"/>
+                        <path d="m6 6 12 12"/>
+                    </svg>
+                </button>
+
+            </div>
+        </header>
+
+        <!-- MAIN -->
+        <main class="shop-page" id="shop-page">
+            <!-- Shop introduction -->
+            <header class="shop-intro">
+                <p class="eyebrow">THE EARTHKIND COLLECTION</p>
+                <h1>Nature, gathered for you.</h1>
+                <p>
+                    Thoughtfully selected botanical ingredients for your next creation.
+                    Find your natural essentials.
+                </p>
+            </header>
+
+            <!-- Search and sorting -->
+            <div class="shop-toolbar">
+                <label class="shop-search">
+                    <span class="sr-only">Search products</span>
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7"></circle>
+                        <path d="m16 16 4 4"></path>
+                    </svg>
+                    <input
+                    type="search"
+                    id="product-search"
+                    placeholder="Search ingredients..."
+                    autocomplete="off"
+                    >
+                </label>
+
+                <label class="shop-sort">
+                    <span class="sr-only">Sort products</span>
+                    <select id="product-sort">
+                        <option value="featured">Featured</option>
+                        <option value="name-asc">Name: A to Z</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="shop-layout">
+
+                <!-- Filters -->
+                <aside class="shop-sidebar" id="shop-filters">
+                    <div class="filter-heading">
+                        <h2>Filters</h2>
+                        <button type="button" id="reset-filters">
+                            Clear all
+                        </button>
+                    </div>
+
+                    <fieldset class="filter-group">
+                        <legend>Categories</legend>
+
+                        <label class="filter-option">
+                            <input type="radio" name="category" value="all" checked>
+                            <span>All ingredients</span>
+                        </label>
+
+                        <label class="filter-option">
+                            <input type="radio" name="category" value="plant-oils">
+                            <span>Plant Oils</span>
+                        </label>
+
+                        <label class="filter-option">
+                            <input type="radio" name="category" value="botanical-powders">
+                            <span>Botanical Powders</span>
+                        </label>
+
+                        <label class="filter-option">
+                            <input type="radio" name="category" value="dried-botanicals">
+                            <span>Dried Botanicals</span>
+                        </label>
+
+                        <label class="filter-option">
+                            <input type="radio" name="category" value="clays-minerals">
+                            <span>Clays &amp; Minerals</span>
+                        </label>
+
+                        <label class="filter-option">
+                            <input type="radio" name="category" value="natural-extracts">
+                            <span>Natural Extracts</span>
+                        </label>
+
+                        <label class="filter-option">
+                            <input type="radio" name="category" value="herbal-ingredients">
+                            <span>Herbal Ingredients</span>
+                        </label>
+                    </fieldset>
+
+                    <fieldset class="filter-group">
+                        <legend>Price range</legend>
+
+                        <div class="price-inputs">
+                            <label>
+                                <span>Min (₹)</span>
+                                <input
+                                    type="number"
+                                    id="min-price"
+                                    min="0"
+                                    step="1"
+                                    placeholder="0"
+                                >
+                            </label>
+
+                            <label>
+                                <span>Max (₹)</span>
+                                <input
+                                    type="number"
+                                    id="max-price"
+                                    min="0"
+                                    step="1"
+                                    placeholder="Any"
+                                >
+                            </label>
+                        </div>
+
+                        <p class="filter-hint">Prices are in Indian rupees.</p>
+                    </fieldset>
+                </aside>
+
+                <!-- Products -->
+                <section class="shop-results" aria-label="Products">
+                    <div class="results-heading">
+                        <div>
+                            <h2 id="results-title">All ingredients</h2>
+                            <p id="product-count" aria-live="polite">
+                            Loading ingredients...
+                            </p>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="mobile-filter-button"
+                            id="mobile-filter-toggle"
+                            aria-controls="shop-filters"
+                            aria-expanded="false"
+                        >
+                            Filters
+                        </button>
+                    </div>
+
+                    <div class="product-grid" id="product-grid">
+                    <!-- Product cards rendered by JavaScript -->
+                    </div>
+
+                    <div class="shop-empty" id="shop-empty" hidden>
+                        <span aria-hidden="true">✳</span>
+                        <h3>No ingredients found</h3>
+                        <p>Try another category or adjust your search and price range.</p>
+                        <button type="button" id="empty-reset">
+                            Clear filters
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </main>
+        
+        <!-- Product Quick View Modal -->
+        <dialog
+            class="product-modal"
+            id="product-modal"
+            aria-labelledby="modal-product-name"
+        >
+            <div class="product-modal-content">
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="modal-close"
+                    aria-label="Close product details"
+                >
+                    &times;
+                </button>
+
+                <div class="modal-product-image">
+                    <img
+                        src=""
+                        alt=""
+                        id="modal-product-image"
+                    >
+                </div>
+
+                <div class="modal-product-info">
+
+                    <p id="modal-product-category" class="product-category"></p>
+                    <h2 id="modal-product-name"></h2>
+                    <p id="modal-product-price" class="product-price"></p>
+                    <p id="modal-product-description"></p>
+                    <div class="modal-product-details">
+                        <div>
+                            <span>Category</span>
+                            <strong id="modal-detail-category"></strong>
+                        </div>
+                        <div>
+                            <span>Product type</span>
+                            <strong id="modal-detail-type"></strong>
+                        </div>
+                        <div>
+                            <span>Origin</span>
+                            <strong id="modal-detail-origin"></strong>
+                        </div>
+                    </div>
+
+                    <!-- Quantity -->
+                    <div class="modal-quantity-section">
+                        <label for="modal-quantity">
+                            Quantity
+                        </label>
+                        <div class="quantity-control">
+                            <button
+                                type="button"
+                                id="quantity-decrease"
+                                aria-label="Decrease quantity"
+                            >
+                                -
+                            </button>
+                            <input
+                                type="number"
+                                id="modal-quantity"
+                                value="1"
+                                min="1"
+                                max="99"
+                            >
+                            <button
+                                type="button"
+                                id="quantity-increase"
+                                aria-label="Increase quantity"
+                            >
+                                +
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Add to cart -->
+                    <button
+                        type="button"
+                        class="button button-primary modal-add-cart"
+                        id="modal-add-cart"
+                    >
+                        <span>Add to cart</span>
+                        <span id="modal-add-price">₹249</span>
+                    </button>
+                    <p
+                        class="cart-feedback"
+                        id="cart-feedback"
+                        role="status"
+                        aria-live="polite"
+                    ></p>
+                </div>
+            </div>
+        </dialog>
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+            <div class="footer-container">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand-logo">
+                        <img src="../assets/images/logo.jpeg" alt="EarthKind Botanics logo" class="footer-logo" />
+                        <span>EarthKind <br/>BOTANICS</span>
+                    </a>
+                    <p>
+                        Discover the possibilities of nature,
+                        one ingredient at a time.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Explore</h3>
+                    <a href="/">Home</a>
+                    <a href="/templates/shop.html">Shop ingredients</a>
+                    <a href="/index.html#featured">Featured products</a>
+                    <a href="/templates/about.html">Our story</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Discover</h3>
+                    <a href="/templates/shop.html?category=plant-oils">Plant oils</a>
+                    <a href="/templates/shop.html?category=botanical-powders">Botanical powders</a>
+                    <a href="/templates/shop.html?category=dried-botanicals">Dried botanicals</a>
+                    <a href="/templates/shop.html?category=natural-extracts">Natural extracts</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Get in touch</h3>
+                    <p>
+                        Have a question about our collection?
+                    </p>
+                    <a href="mailto:karthikkarthikpwork@gmail.com">
+                        Contact us
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    &copy; <span id="current-year"></span>
+                    EarthKind Botanics. All rights reserved.
+                </p>
+                <p>
+                    Made with appreciation for nature.
+                </p>
+            </div>
+        </footer>
+
+        <!-- Cart overlay -->
+        <div class="cart-overlay" id="cart-overlay"></div>
+
+        <!-- Shopping cart drawer -->
+        <aside class="cart-drawer"
+            id="cart-drawer"
+            aria-label="Shopping cart"
+            aria-hidden="true">
+
+            <div class="cart-header">
+                <div>
+                    <p class="eyebrow">YOUR SELECTION</p>
+                    <h2>Your Cart <span id="drawer-cart-count">(0)</span></h2>
+                </div>
+
+                <button type="button"
+                        class="cart-close"
+                        id="cart-close"
+                        aria-label="Close shopping cart">
+                    &times;
+                </button>
+            </div>
+
+            <div class="cart-items" id="cart-items">
+                <!-- Cart items rendered with JavaScript -->
+            </div>
+
+            <div class="cart-empty" id="cart-empty">
+                <span>✳</span>
+                <h3>Your basket is waiting</h3>
+                <p>Discover something natural for your next creation.</p>
+                <button type="button" id="continue-shopping">
+                    Explore ingredients
+                </button>
+            </div>
+
+            <div class="cart-footer" id="cart-footer">
+                <div class="cart-subtotal">
+                    <span>Subtotal</span>
+                    <strong id="cart-subtotal">₹0</strong>
+                </div>
+                <p>Shipping and taxes calculated at checkout.</p>
+                <button type="button"
+                        class="button button-primary cart-checkout">
+                    Proceed to checkout
+                    <span>↗</span>
+                </button>
+                <button type="button"
+                        class="cart-continue"
+                        id="cart-continue">
+                    Continue shopping
+                </button>
+            </div>
+        </aside>
+    </body>
+</html>
